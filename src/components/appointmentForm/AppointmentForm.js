@@ -10,6 +10,7 @@ const getTodayString = () => {
 
 // Stateless component that renders a web form to collect the necessary appointment information
 export const AppointmentForm = ({
+  contacts,
   name,
   setName,
   contact,
@@ -48,8 +49,10 @@ export const AppointmentForm = ({
         />
 
         <ContactPicker 
-          contact={contact}
+          contacts={contacts}
           onChange={(e) => setContact(e.target.value)}
+          value={contact}
+          name="contact"
         />
 
         <input

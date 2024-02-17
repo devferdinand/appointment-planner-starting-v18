@@ -23,7 +23,7 @@ export const ContactsPage = ({contacts, addDataToContacts}) => {
 
   // Using hooks, check for contact name in the contacts array variable in props
   useEffect(() => {
-    const isDuplicate = contacts.includes(name);
+    const isDuplicate = contacts.some(contact => contact.name === name);
     if(isDuplicate){
       setDuplicate(true);
     }
